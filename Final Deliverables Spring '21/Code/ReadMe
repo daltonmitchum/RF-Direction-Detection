@@ -1,1 +1,15 @@
 This folder contains all the code required to run the system.
+
+top_block
+- This file contains the code for the GNU radio to run which was made through GNU Radio Comapanion.
+- The only thing that needs to be changed in this code would be the file path for where it prints the data to. 
+
+read_complex_binary
+- This file will read the data stored by GNU radio and convert the data into an 1D array and store into a text file.
+- The only thing that needs to be changed in this code would be the file pateh for where it prints the converted data to.
+
+directionGUI
+- This file contains the GUI code for the system. It will display the direction of arrival it gets it information from the directionCalculation file.
+
+directionCalculation
+- This file contains the code to calculate the direction of arrival angle by reading the file the read_complex_binary prints out the angle calcuaclting is then transferred to direction GUI to display. 
