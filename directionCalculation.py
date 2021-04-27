@@ -1,7 +1,7 @@
 import math
 import time
 import array
-##from gpiozero import LED
+from gpiozero import LED
 from tkinter import Tk, Canvas, Frame, BOTH
 import numpy as np
 
