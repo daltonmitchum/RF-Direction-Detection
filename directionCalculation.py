@@ -13,14 +13,14 @@ import numpy as np
 ### calculate the direction in degrees of the incoming signal and display the direction.
 
 #declare the switches to GPIO pins
-##switch1_1 = LED(17); #pin 11
-##switch1_2 = LED(27); #pin 13
-##switch1_3 = LED(22); #pin 15
-##switch2_1 = LED(23); #pin 16
-##switch2_2 = LED(24); #pin 18
-##switch2_3 = LED(25); #pin 22
-##switch3_1 = LED(5); #pin 29
-##switch3_2 = LED(6); #pin 31
+switch1_1 = LED(17); #pin 11
+switch1_2 = LED(27); #pin 13
+switch1_3 = LED(22); #pin 15
+switch2_1 = LED(23); #pin 16
+switch2_2 = LED(24); #pin 18
+switch2_3 = LED(25); #pin 22
+switch3_1 = LED(5); #pin 29
+switch3_2 = LED(6); #pin 31
 
 
 ####Antenna switching functions##########################################
