@@ -191,12 +191,39 @@ for x in content:
 #print array contents to see if it worked
         for x in antenna1_array:
             print(x)
-#average the array
+#average the arrays
         for x in antenna1_array:
             y = y + x
         average1 = y / len(antenna1_array);
-        print(average1)
-       time.sleep(1);
+        y = 0;
+        for x in antenna2_array:
+            y = y + x
+        average2 = y / len(antenna2_array);
+        y = 0;
+        for x in antenna3_array:
+            y = y + x
+        average3 = y / len(antenna3_array);
+        y = 0;
+        for x in antenna4_array:
+            y = y + x
+        average4 = y / len(antenna4_array);
+        y = 0;
+        for x in antenna5_array:
+            y = y + x
+        average5 = y / len(antenna5_array);
+        y = 0;
+        for x in antenna6_array:
+            y = y + x
+        average6 = y / len(antenna6_array);
+        y = 0;
+        for x in antenna7_array:
+            y = y + x
+        average7 = y / len(antenna7_array);
+        y = 0;
+        for x in antenna8_array:
+            y = y + x
+        average8 = y / len(antenna8_array);
+        time.sleep(1);
         i = i + 1;
         turnRF1_2on();
         time.sleep(1);
