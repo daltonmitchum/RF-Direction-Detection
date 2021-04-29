@@ -24,6 +24,16 @@ switch3_2 = LED(6); #pin 31
 
 
 ####Antenna switching functions##########################################
+def turnRF1SwitchesOff():
+    switch1_1off();
+    switch1_2off();
+    switch1_3off();
+
+def turnRF2SwitchesOff():
+    switch2_1off();
+    switch2_2off();
+    switch2_3off();
+    
 def turnSwitch1off():
     #turn switches 1 off
     switch1_3.on();
@@ -152,16 +162,46 @@ class Example(Frame):
     
 ####Main################################################################# 
 def main():
-   turnSwitch1off();
+    turnSwitch1off();
     turnSwitch2off();
     i = 0;
     while True:
         inputFromSwitch1();
         turnRF1_1on();
-#sample data using GNU Radio
-     ##sleep for short time
-
-#convert the data (Krishna's code)
+        turnRF1SwitchesOff();
+        time.sleep(1);
+        i = i + 1;
+        turnRF1_2on();
+        turnRF1SwitchesOff();
+        time.sleep(1);
+        i = i + 1;
+        turnRF1_3on();
+        turnRF1SwitchesOff();
+        time.sleep(1);
+        i = i + 1;
+        turnRF1_4on();
+        turnSwitch1off();
+        time.sleep(1);
+        i = i + 1;
+        inputFromSwitch2();
+        turnRF2_1on();
+        turnRF2SwitchesOff();
+        time.sleep(1);
+        i = i + 1;
+        turnRF2_2on();
+        turnRF2SwitchesOff();
+        time.sleep(1);
+        i = i + 1;
+        turnRF2_3on();
+        turnRF2SwitchesOff();
+        time.sleep(1);
+        i = i + 1;
+        turnRF2_4on();
+        turnRF2SwitchesOff();
+        time.sleep(1);
+        turnSwitch1Off();
+        turnSwitch2Off();
+        #convert the data (Krishna's code)
 # Read complex binary
 # open filename and return the contents as a column vector treating
 # them as 32 bit complex numbers
@@ -223,31 +263,6 @@ for x in content:
         for x in antenna8_array:
             y = y + x
         average8 = y / len(antenna8_array);
-        time.sleep(1);
-        i = i + 1;
-        turnRF1_2on();
-        time.sleep(1);
-        i = i + 1;
-        turnRF1_3on();
-        time.sleep(1);
-        i = i + 1;
-        turnRF1_4on();
-        time.sleep(1);
-        i = i + 1;
-        inputFromSwitch2();
-        turnRF2_1on();
-        time.sleep(1);
-        i = i + 1;
-        turnRF2_2on();
-        time.sleep(1);
-        i = i + 1;
-        turnRF2_3on();
-        time.sleep(1);
-        i = i + 1;
-        turnRF2_4on();
-        time.sleep(1);
-        turnSwitch1Off();
-        turnSwitch2Off();
     #do calculations for all 8 arrays
         antennaAverage = array.array('f', [average1, average2, average3, average4, average5, average6, average7, average8]);
         runAntennaCalc(antennaAverage);
